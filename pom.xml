@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                de.neuefische.mucjava231javafxdemo/de.neuefische.mucjava231javafxdemo.HelloApplication
+                                de.neuefische.mucjava231javafxdemo/de.neuefische.mucjava231javafxdemo.HelloWorldWithoutFxmlApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
