@@ -17,7 +17,8 @@ public class HelloApplication extends Application {
 
         // Das ist neu -> Wir erstellen eine Scene mit dem root-Node aus der FXML-Datei.
         // Wir bauen die GUI im SceneBuilder und importieren die Szene hier.
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        // Scene hat die gleiche Breite und Höhe wie der Top-Container FXML-Datei.
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
         // Das ist alles gleich!
         stage.setTitle("Hello!");
