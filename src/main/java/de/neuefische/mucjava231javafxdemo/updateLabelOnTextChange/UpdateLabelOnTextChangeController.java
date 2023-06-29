@@ -14,6 +14,7 @@ public class UpdateLabelOnTextChangeController {
     public void initialize() {
         // Funktioniert auch, erlaubt allerdings kein "manuelles Verändern" des Labels via setText
 //        label.textProperty().bind(textField.textProperty());
+
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
             label.setText(newValue);
         });

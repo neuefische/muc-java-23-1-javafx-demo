@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 public class HelloController {
     @FXML
     private Label welcomeText;
-    TextField textField;
 
     @FXML
     void onHelloButtonClick() {
@@ -16,7 +15,6 @@ public class HelloController {
 
     @FXML
     void onPrintTextClick() {
-        textField.getText();
         System.out.println("Text is: " + welcomeText.getText());
     }
 }

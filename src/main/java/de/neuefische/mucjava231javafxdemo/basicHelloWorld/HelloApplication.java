@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         // Das ist neu -> Wir laden die FXML-Datei.
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
-                "/de/neuefische/mucjava231javafxdemo/hello-view.fxml"));
+                "/de/neuefische/mucjava231javafxdemo/basicHelloWorld/hello-view.fxml"));
 
         // Das ist neu -> Wir erstellen eine Scene mit dem root-Node aus der FXML-Datei.
         // Wir bauen die GUI im SceneBuilder und importieren die Szene hier.
