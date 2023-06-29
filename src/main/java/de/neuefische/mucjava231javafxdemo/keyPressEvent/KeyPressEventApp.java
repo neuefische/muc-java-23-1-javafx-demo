@@ -14,6 +14,10 @@ public class KeyPressEventApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(KeyPressEventApp.class.getResource("/de/neuefische/mucjava231javafxdemo/keyPressEvent/keyPressEvent.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
+        // Wir brauchen den KeyPressEventController
+        KeyPressEventController keyPressEventController = fxmlLoader.getController();
+        keyPressEventController.initialize(scene);
+
         stage.resizableProperty().set(false);
         stage.setTitle("KeyPressEventApp!");
         stage.setScene(scene);
