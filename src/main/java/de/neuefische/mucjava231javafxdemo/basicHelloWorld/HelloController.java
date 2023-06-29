@@ -7,14 +7,16 @@ import javafx.scene.control.TextField;
 public class HelloController {
     @FXML
     private Label welcomeText;
+    @FXML
+    private TextField textField;
 
     @FXML
     void onHelloButtonClick() {
-        welcomeText.setText("Hallo lieber, aber schon müder Kurs :D");
+        welcomeText.setText("Hallo lieber und sehr aktiver, hellhöriger Kurs :D");
     }
 
     @FXML
     void onPrintTextClick() {
-        System.out.println("Text is: " + welcomeText.getText());
+        System.out.println("Text is: " + textField.getText());
     }
 }
