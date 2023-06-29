@@ -22,6 +22,10 @@ public class HelloController {
 
             welcomeText.setText(newValue);
         });
+
+        // Was ist der Vorteil von Bindings?
+        // Wenn sich der Text im TextField ändert, wird der Text im Label automatisch aktualisiert -> Es geht nicht anders!
+//        welcomeText.textProperty().bind(textField.textProperty());
     }
 
     @FXML
