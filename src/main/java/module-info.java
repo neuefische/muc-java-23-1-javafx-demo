@@ -12,4 +12,7 @@ module de.neuefische.mucjava231javafxdemo {
 
     opens de.neuefische.mucjava231javafxdemo.updateLabelOnTextChange to javafx.fxml;
     exports de.neuefische.mucjava231javafxdemo.updateLabelOnTextChange;
+
+    opens de.neuefische.mucjava231javafxdemo.keyPressEvent to javafx.fxml;
+    exports de.neuefische.mucjava231javafxdemo.keyPressEvent;
 }
