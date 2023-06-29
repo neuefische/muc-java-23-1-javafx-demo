@@ -15,4 +15,7 @@ module de.neuefische.mucjava231javafxdemo {
 
     opens de.neuefische.mucjava231javafxdemo.keyPressEvent to javafx.fxml;
     exports de.neuefische.mucjava231javafxdemo.keyPressEvent;
+
+    opens de.neuefische.mucjava231javafxdemo.movableimage to javafx.fxml;
+    exports de.neuefische.mucjava231javafxdemo.movableimage;
 }
