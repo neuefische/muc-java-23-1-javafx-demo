@@ -11,34 +11,41 @@ public class MovableImageController {
 
     @FXML
     private ImageView imageView;
+    private Scene scene;
+    private double moveValue = 50;
+
 
     public void initialize(Scene scene) {
         System.out.println("MovableImageController initialized");
+        this.scene = scene;
         scene.setOnKeyPressed(this::handleKeyPressEvent);
     }
 
     void handleKeyPressEvent(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
+            case UP:
             case W:
-                animateMovementOfImageView(imageView.getX(), imageView.getY() - 10);
+                if (imageView.getTranslateY() - moveValue >= 0 - imageView.getLayoutY()) {
+                    animateMovementOfImageView(imageView.getX(), imageView.getY() - moveValue);
+                }
                 break;
+            case LEFT:
             case A:
-                animateMovementOfImageView(imageView.getX() - 10, imageView.getY());
+                if (imageView.getTranslateX() - moveValue >= 0 - imageView.getLayoutX()) {
+                    animateMovementOfImageView(imageView.getX() - moveValue, imageView.getY());
+                }
                 break;
+            case DOWN:
             case S:
-                animateMovementOfImageView(imageView.getX(), imageView.getY() + 10);
+                if (imageView.getTranslateY() + moveValue + imageView.getFitHeight() <= scene.getHeight() - imageView.getLayoutY()) {
+                    animateMovementOfImageView(imageView.getX(), imageView.getY() + moveValue);
+                }
                 break;
+            case RIGHT:
             case D:
-                animateMovementOfImageView(imageView.getX() + 10, imageView.getY());
-                break;
-            case DIGIT1:
-                System.out.println("1 gedrückt");
-                break;
-            case PERIOD:
-                System.out.println(". gedrückt");
-                break;
-            default:
-                System.out.println(keyEvent.getText() + keyEvent.getCode());
+                if (imageView.getTranslateX() + moveValue + imageView.getFitWidth() <= scene.getWidth() - imageView.getLayoutX()) {
+                    animateMovementOfImageView(imageView.getX() + moveValue, imageView.getY());
+                }
                 break;
         }
     }
