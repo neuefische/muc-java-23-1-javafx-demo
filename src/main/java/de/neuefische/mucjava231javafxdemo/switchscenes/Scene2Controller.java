@@ -1,5 +1,6 @@
 package de.neuefische.mucjava231javafxdemo.switchscenes;
 
+import de.neuefische.mucjava231javafxdemo.model.Boat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,9 @@ public class Scene2Controller {
     private Parent root;
 
     @FXML
-    TextField inputField;
+    private TextField inputField;
+
+    private Boat boat = new Boat("Boaty McBoatface", "Typisches Boot", 1000);
 
     @FXML
     public void switchToScene1(ActionEvent event) throws IOException {
@@ -33,9 +36,11 @@ public class Scene2Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("scene1.fxml"));
         root = loader.load();
 
+        // Wir laden den Controller anhand des Types
         Scene1Controller scene1Controller = loader.getController();
+        // Wir "verschicken" die Daten an den Controller1
         scene1Controller.setDisplayText(inputField.getText());
-
+        scene1Controller.setBoat(boat);
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

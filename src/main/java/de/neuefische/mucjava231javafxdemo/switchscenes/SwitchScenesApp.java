@@ -13,8 +13,9 @@ public class SwitchScenesApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(SwitchScenesApp.class.getResource("/de/neuefische/mucjava231javafxdemo/switchscenes/scene1.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+
         stage.resizableProperty().set(false);
-        stage.setTitle("Hello!");
+        stage.setTitle("SwitchScenesApp!");
         stage.setScene(scene);
         stage.show();
     }
