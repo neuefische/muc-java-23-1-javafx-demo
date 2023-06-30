@@ -18,4 +18,7 @@ module de.neuefische.mucjava231javafxdemo {
 
     opens de.neuefische.mucjava231javafxdemo.movableimage to javafx.fxml;
     exports de.neuefische.mucjava231javafxdemo.movableimage;
+
+    opens de.neuefische.mucjava231javafxdemo.switchscenes to javafx.fxml;
+    exports de.neuefische.mucjava231javafxdemo.switchscenes;
 }
