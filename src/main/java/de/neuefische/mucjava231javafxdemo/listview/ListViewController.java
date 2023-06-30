@@ -7,10 +7,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ListViewController {
 
+    // Wir benutzen die ListView vom Typ <String>
     @FXML
     private ListView<String> listView;
     @FXML
@@ -21,11 +24,20 @@ public class ListViewController {
     private Text text;
 
     public void initialize() {
+        // Hier stellen wir die Daten der ListView ein
+        //  listView.getItems() = Liste der Elemente aus listView holen
+        // .addAll() = Elemente zur Liste hinzufügen
         listView.getItems().addAll(Arrays.asList("Paramore", "Sum 41", "Green Day", "Linkin Park"));
 
-        listView.getSelectionModel().selectedItemProperty().addListener(
-                (observableValue, s, t1) -> text.setText(listView.getSelectionModel().getSelectedItem())
-        );
+        listView.getSelectionModel()
+                .selectedItemProperty()
+                // Listener der etwas macht
+                .addListener(
+                        (observableValue, s, t1) -> {
+                            System.out.println(listView.getSelectionModel().getSelectedItem());
+                            text.setText(listView.getSelectionModel().getSelectedItem());
+                        }
+                );
 
         textField.addEventHandler(EventType.ROOT, event -> {
             addButton.setDisable(textField.getText().isEmpty());
