@@ -21,4 +21,7 @@ module de.neuefische.mucjava231javafxdemo {
 
     opens de.neuefische.mucjava231javafxdemo.switchscenes to javafx.fxml;
     exports de.neuefische.mucjava231javafxdemo.switchscenes;
+
+    opens de.neuefische.mucjava231javafxdemo.listview to javafx.fxml;
+    exports de.neuefische.mucjava231javafxdemo.listview;
 }
